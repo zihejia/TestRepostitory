@@ -18,11 +18,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           onlyLastTag: "true"
-          stripHeaders: "true"
+          stripHeaders: "false"
           headerLabel: "# Changelog"
           breakingLabel: '### 💥 Breaking'
           enhancementLabel: '### 🚀 Enhancements'
-          stripGeneratorNotice: "true"
+          stripGeneratorNotice: "false"
           bugsLabel: '### 🐛 Bug fixes'
           prLabel: '### 📁 Other pull requests'
           issues: true
