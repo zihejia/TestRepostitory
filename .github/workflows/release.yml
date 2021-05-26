@@ -37,8 +37,8 @@ jobs:
         run: git add .
       - name: commit changlog
         run: |
-        git config --global user.email "you@example.com"
-        git commit -m "Update CHANGELOG"
+          git config --global user.email "you@example.com"
+          git commit -m "Update CHANGELOG"
       - name: push changlog
         run: git push origin main
       - name: "🚀 Create GitHub release"
