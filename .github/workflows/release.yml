@@ -19,14 +19,15 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           onlyLastTag: true
           stripHeaders: false
+          base: "CHANGELOG.md"
           headerLabel: "# Changelog"
           breakingLabel: '### Breaking'
           enhancementLabel: '### Enhancements'
           stripGeneratorNotice: true
           bugsLabel: '### Fixes'
           prLabel: '### Other pull requests'
-          issues: false
-          issuesWoLabels: false
+          issues: true
+          issuesWoLabels: true
           pullRequests: true
           prWoLabels: true
           author: true
