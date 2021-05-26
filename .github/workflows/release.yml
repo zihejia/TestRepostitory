@@ -26,8 +26,8 @@ jobs:
           stripGeneratorNotice: true
           bugsLabel: '### Fixes'
           prLabel: '### Other pull requests'
-          issues: true
-          issuesWoLabels: true
+          issues: false
+          issuesWoLabels: false
           pullRequests: true
           prWoLabels: true
           author: true
