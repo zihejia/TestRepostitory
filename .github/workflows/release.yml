@@ -19,7 +19,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           onlyLastTag: true
           stripHeaders: false
-          base: "CHANGELOG.md"
           headerLabel: "# Changelog"
           breakingLabel: '### Breaking'
           enhancementLabel: '### Enhancements'
@@ -30,8 +29,16 @@ jobs:
           issuesWoLabels: false
           pullRequests: true
           prWoLabels: true
-          author: true
+          author: false
           verbose: true
+      - name: check for changes
+        run: git status
+      - name: stage changed files
+        run: git add .
+      - name: commit changlog
+        run: git commit -m "Update CHANGELOG"
+      - name: push changlog
+        run: git push origin main
       - name: "🚀 Create GitHub release"
         uses: actions/create-release@v1
         env:
