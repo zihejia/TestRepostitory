@@ -26,8 +26,8 @@ jobs:
           stripGeneratorNotice: true
           bugsLabel: '### Fixes'
           prLabel: '### Other pull requests'
-          issues: false
-          issuesWoLabels: false
+          issues: true
+          issuesWoLabels: true
           pullRequests: true
           prWoLabels: true
           author: false
@@ -50,6 +50,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           output: "output.md"
+          headerLabel: "# Changelog"
           onlyLastTag: true
           stripHeaders: false
           breakingLabel: '### Breaking'
@@ -57,9 +58,9 @@ jobs:
           stripGeneratorNotice: true
           bugsLabel: '### Fixes'
           issues: true
-          issuesWoLabels: false
-          pullRequests: "true"
-          prWoLabels: "true"
+          issuesWoLabels: true
+          pullRequests: true
+          prWoLabels: true
           author: false
           verbose: true
       - name: "🚀 Create GitHub release"
