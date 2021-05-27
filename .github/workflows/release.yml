@@ -31,7 +31,7 @@ jobs:
           prWoLabels: true
           author: false
           verbose: true
-      - name: Commit CHANGELOG changes
+      - name: Commit CHANGELOG Changes
         run: |
           git add .
           git config user.name "zihe.jia"
@@ -43,7 +43,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
           force: true
-      - name: "Preparing for the Github release"
+      - name: "Prepare for the Github Release"
         id: generate-release-changelog
         uses: heinrichreimer/github-changelog-generator-action@v2.2
         with:
@@ -62,7 +62,7 @@ jobs:
           prWoLabels: true
           author: false
           verbose: true
-      - name: "🚀 Create GitHub release"
+      - name: "🚀 Create GitHub Release"
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
