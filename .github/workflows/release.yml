@@ -19,6 +19,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           onlyLastTag: true
           stripHeaders: false
+          base: "CHANGELOG.md"
           headerLabel: "# Changelog"
           breakingLabel: '### Breaking'
           enhancementLabel: '### Enhancements'
