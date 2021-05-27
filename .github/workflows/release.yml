@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: "📥 Check-out"
         uses: actions/checkout@v1
-      - name: "✏️ Generate release changelog"
-        id: generate-release-changelog
+      - name: "✏️ Update release changelog"
+        id: update-release-changelog
         uses: heinrichreimer/github-changelog-generator-action@v2.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -31,21 +31,38 @@ jobs:
           prWoLabels: true
           author: false
           verbose: true
-      - name: check for changes
-        run: git status
-      - name: stage changed files
-        run: git add .
       - name: commit changlog
         run: |
+          git add .
           git config user.name "zihe.jia"
           git config user.email "zihe.jia@mixpanel.com"
           git commit -m "Update CHANGELOG"
-      - name: Push changes # push the output folder to your repo
+      - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
           force: true
+      - name: "✏️ Generate release changelog"
+        id: generate-release-changelog
+        uses: heinrichreimer/github-changelog-generator-action@v2.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          output: "output.md"
+          onlyLastTag: true
+          stripHeaders: false
+          headerLabel: "# Changelog"
+          breakingLabel: '### Breaking'
+          enhancementLabel: '### Enhancements'
+          stripGeneratorNotice: true
+          bugsLabel: '### Fixes'
+          prLabel: '### Other pull requests'
+          issues: false
+          issuesWoLabels: false
+          pullRequests: true
+          prWoLabels: true
+          author: false
+          verbose: true
       - name: "🚀 Create GitHub release"
         uses: actions/create-release@v1
         env:
