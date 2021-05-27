@@ -52,16 +52,14 @@ jobs:
           output: "output.md"
           onlyLastTag: true
           stripHeaders: false
-          headerLabel: "# Changelog"
           breakingLabel: '### Breaking'
           enhancementLabel: '### Enhancements'
           stripGeneratorNotice: true
           bugsLabel: '### Fixes'
-          prLabel: '### Other pull requests'
-          issues: false
+          issues: true
           issuesWoLabels: false
-          pullRequests: true
-          prWoLabels: true
+          pullRequests: "true"
+          prWoLabels: "true"
           author: false
           verbose: true
       - name: "🚀 Create GitHub release"
