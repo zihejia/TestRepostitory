@@ -25,7 +25,6 @@ jobs:
           enhancementLabel: '### Enhancements'
           stripGeneratorNotice: true
           bugsLabel: '### Fixes'
-          prLabel: '### Other pull requests'
           issues: true
           issuesWoLabels: true
           pullRequests: true
