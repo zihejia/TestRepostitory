@@ -1,5 +1,17 @@
 #
 
+## [v4.1.7](https://github.com/zihejia/TestRepostitory/tree/v4.1.7) (2021-05-27)
+
+### Fixes
+
+- aip [\#42](https://github.com/zihejia/TestRepostitory/pull/42)
+
+**Closed issues:**
+
+- close [\#43](https://github.com/zihejia/TestRepostitory/issues/43)
+
+#
+
 ## [v4.1.3](https://github.com/zihejia/TestRepostitory/tree/v4.1.3) (2021-05-27)
 
 ### Enhancements
@@ -27,6 +39,8 @@
 - wip [\#31](https://github.com/zihejia/TestRepostitory/pull/31)
 
 ## [v4.0.22](https://github.com/zihejia/TestRepostitory/tree/v4.0.22) (2021-05-27)
+
+
 
 
 
